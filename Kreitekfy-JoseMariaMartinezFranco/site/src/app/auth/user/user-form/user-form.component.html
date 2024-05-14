@@ -1,0 +1,62 @@
+<body>
+    <button class="col-12 col-md-12" (click)="return()">Volver</button>
+    <div *ngIf="userData" class="product-container">
+      <div class="left-panel">
+        <table>
+          <tr>
+            <th>Nombre de Usuario</th>
+            <td><input type="text" [(ngModel)]="userData.username" readonly /></td>
+          </tr>
+          <tr>
+            <th>Contraseña</th>
+            <td><input type="password" [(ngModel)]="userData.password" /></td>
+          </tr>
+          <tr>
+            <th>Nombre</th>
+            <td><input type="text" [(ngModel)]="userData.firstName" /></td>
+          </tr>
+          <tr>
+            <th>Apellido</th>
+            <td><input type="text" [(ngModel)]="userData.lastName" /></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="email" [(ngModel)]="userData.email" /></td>
+          </tr>
+        </table>
+        <button (click)="updateUser()">Guardar</button>
+      </div>
+      <div class="right-panel">
+        <div>
+            <h2>Reproducciones del Usuario</h2>
+            <table class="large-table">
+   
+              <thead>
+                <tr>
+                  <th>ID de Canción</th>
+                  <th>Nombre de la Canción</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+          
+              <tbody>
+                <tr *ngFor="let reproduction of reproductions">
+                  <td>{{ reproduction.id }}</td>
+                  <td>{{ reproduction.song }}</td>
+                  <td>{{ reproduction.date }}</td>
+                </tr>
+              </tbody>
+              
+            </table>
+          </div>
+
+          <div class="botoneraPaginacion"><br><br>
+            <button [disabled]="page === 0" class="btn btn-secondary btnAtras" (click)="navegarAnterior()">Anterior</button>
+            <span>Pagina {{(page+1)}} de {{totalPages}} - Elementos totales: {{totalElements}}</span>
+            <button [disabled]="last" class="btn btn-secondary btnSiguiente" (click)="navegarSiguiente()">Siguiente</button>
+        </div>
+          
+      </div>
+    </div>
+  </body>
+  

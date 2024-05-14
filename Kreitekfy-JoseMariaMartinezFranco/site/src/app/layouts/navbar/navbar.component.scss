@@ -1,0 +1,87 @@
+.barra {
+    background: #032a15;
+    color: #FFF;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px ridge #0800ff;
+    position: sticky;
+    top: 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 20px;
+  }
+
+  .nombre{
+    align-items: right;
+  }
+  
+  .logo-container,
+  .links-container {
+    display: flex; /* Usar flexbox para alinear los elementos horizontalmente */
+    align-items: center; /* Centrar verticalmente los elementos */
+  }
+  
+  .logo-image {
+    width: 70px;
+    border-radius: 100px;
+  }
+  
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 100;
+  }
+  
+  .nav-link{
+    display: block;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 80px;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    background-color: #3cb902;
+  }
+  
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    display: none;
+    position: absolute;
+    padding-left: 0px;
+    top: 80px; /* the height of the main nav */
+  }
+  
+  nav ul li:hover > ul {
+    display: inherit;
+  }
+  
+  /* Carracteristicas de la barra en caso de opcion 1 */
+  nav ul ul li {
+    width: 165px;
+    float: none;
+    display: list-item;
+    position: relative;
+    font-size: 17px;
+  }
+  
+  a,
+  ul {
+    font-weight: bold;
+    color: aliceblue;
+  }
+  .nav-item{
+    margin-left: 20px;
+  }
+
+  .nombre{
+    margin-right:100px;
+  }
+  

@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 200vh; /* Ajusta la altura del cuerpo para ocupar toda la ventana */
+  background: linear-gradient(to bottom, #3c7f3d, #21632b); /* Fondo degradado de verde claro a verde oscuro */
+  font-family: Arial, sans-serif; /* Utiliza una fuente de texto legible */
+}
+
+button {
+  padding: 15px;
+  margin: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #041D24; /* Azul oscuro para los botones */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #B7E3CD; /* Azul claro al pasar el mouse por encima */
+    color: #041D24;
+  }
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px auto; /* Margen en la parte superior e inferior, centrado horizontalmente */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+}
+
+.left-panel {
+  flex: 1;
+  margin-right: 50px; 
+}
+
+.right-panel {
+  flex: 2;
+  margin-right: 50px; /* Espacio entre el texto y el borde derecho */
+}
+
+h1 {
+  color: #fff; /* Texto blanco para destacar */
+}
+
+table {
+  width: 100%; /* La tabla ocupa todo el ancho disponible */
+  border-collapse: collapse; /* Elimina los espacios entre celdas */
+}
+
+td {
+  padding: 10px 0; /* Espaciado interno en las celdas */
+}
+
+h2 {
+  margin: 0; /* Elimina el margen predeterminado */
+  color: #fff; /* Texto blanco para los títulos */
+  font-weight: bold; /* Texto en negrita */
+}
+
+h3 {
+  color: #fff; /* Texto blanco para los títulos */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.boton{
+  width: 60px;
+}
+
+.disco {
+  width: 500px; /* Tamaño del disco */
+  border-radius: 50%; /* Forma circular */
+  animation: gira 20s linear infinite; /* Animación de rotación */
+  display: block; /* Elimina el espacio sobrante alrededor de la imagen */
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+}
+
+@keyframes gira {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.star-container {
+  display: flex; /* Usar flexbox para organizar elementos horizontalmente */
+}
+
+.star {
+  cursor: pointer;
+  font-size: 24px; /* Tamaño de la estrella */
+  margin-right: 5px; /* Espacio entre las estrellas */
+}
+
+.filled {
+  color: gold; /* Color de la estrella rellena */
+}
+

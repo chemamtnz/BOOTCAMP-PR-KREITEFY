@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+
+<div class="containerFiltros">
+    <form>
+        <div class="links-container">
+            <div class = "filtro">
+                <label for="name">Nombre</label>
+                <input type="text" [(ngModel)]="nameFilter" name="name">
+            </div>
+            <div class = "filtro">
+                <label for="style">Estilo Musical</label>
+                <input type="text" [(ngModel)]="styleFilter" name="style">
+            </div>
+            <div class = "filtro">
+                <label for="album">Album</label>
+                <input type="text" [(ngModel)]="albumFilter" name="album">
+            </div>
+            <div class = "filtro">
+                <label for="artist">Artista</label>
+                <input type="text" [(ngModel)]="artistFilter" name="artist">
+            </div>
+                <button class="col-12 col-md-12" (click)="limpiarCampos()">Limpiar campos</button>
+                <button id="btnSearch" class="col-6 col-md-3 btn btn-secondary" (click)="searchByFilters();">Buscar</button>
+        </div>
+    </form>
+
+  
+
+<table *ngIf="songs.length > 0">
+    <tbody class="song-container">
+      <tr *ngFor="let song of songs">
+        <td>
+          <a [href]="'/songs/' + song.id"><img [src]="song.image" alt="Song Image" ></a>
+          <div class="song-details">
+            <h3>{{ song.name }}</h3>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+</table>
+
+</div>
+
+
+<div class="botoneraPaginacion">
+    <button [disabled]="page === 0" class="btn btn-secondary btnAtras" (click)="navegarAnterior()">Anterior</button>
+    <span>Pagina {{(page+1)}} de {{totalPages}} - Elementos totales: {{totalElements}}</span>
+    <button [disabled]="last" class="btn btn-secondary btnSiguiente" (click)="navegarSiguiente()">Siguiente</button>
+</div>

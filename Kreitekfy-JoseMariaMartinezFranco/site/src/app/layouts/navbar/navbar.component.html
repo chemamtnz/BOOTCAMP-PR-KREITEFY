@@ -1,0 +1,33 @@
+<!-- Navbar para usuarios autenticados -->
+<nav class="barra" *ngIf="isAuthenticated">
+  <div class="logo-container">
+    <a [routerLink]="['']"><img src="../../assets/images/logoCaso2.jpg" alt="Logo de la aplicación de música" class="logo-image"></a>
+  </div>
+  <div class="links-container">
+    <ul>
+      <li class="nombre">
+        <a [routerLink]="['../user', decodedToken?.sub]"><h2>{{ decodedToken?.sub }}</h2></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" [routerLink]="['../songs']">Todas las canciones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" (click)="logout()">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Navbar para usuarios no autenticados -->
+<nav class="barra" *ngIf="!isAuthenticated">
+  <div class="logo-container">
+    <a [routerLink]="['']"><img src="../../assets/images/logoCaso2.jpg" alt="Logo de la aplicación de música" class="logo-image"></a>
+  </div>
+  <div class="links-container">
+    <ul>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" [routerLink]="['/login']">Log In</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,46 @@
+<body>
+  <button class="col-12 col-md-12" (click)="return()">Volver</button>
+  <div *ngIf="song" class="product-container">
+    <div class="left-panel">
+      <img class="disco" [src]="song.image" alt="Song Image">
+      <img class="boton" src="../../assets/images/boton-de-play.png" alt="" (click)="registerReproduction()">
+    </div>
+    <div class="right-panel">
+      <h1>{{ song.name }}</h1>
+      <table>
+        <tr>
+          <td><h2>Style</h2></td>
+          <td><h2>{{ song.style }}</h2></td>
+        </tr>
+        <tr>
+          <td><h2>Artist</h2></td>
+          <td><h2>{{ song.artist }}</h2></td>
+        </tr>
+        <tr>
+          <td><h2>Album</h2></td>
+          <td><h2>{{ song.album }}</h2></td>
+        </tr>
+        <tr>
+          <td><h2>Valoration</h2></td>
+          <td><h2>{{ song.valoration }}</h2></td>
+          <td>
+            <div class="star-container">
+              <div *ngFor="let star of stars" class="star" (click)="selectValoration(star)">
+                <span [class.filled]="star <= newValoration">★</span>
+              </div>
+            </div>
+        </td>
+        </tr>
+        <tr>
+          <td><h2>Duration</h2></td>
+          <td><h2>{{ song.duration }}</h2></td>
+        </tr>
+        <tr>
+          <td><h2>Reproductions</h2></td>
+          <td><h2>{{ song.reproductions }}</h2></td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</body>

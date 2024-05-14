@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<h2>Registro</h2>
+<div class="logo-container">
+  <img src="../../assets/images/logoCaso2.jpg" alt="Logo de la aplicación de música" class="logo-image">
+</div>
+<form>
+  <input type="text" [(ngModel)]="user.firstName" name="firstName" placeholder="First Name" required>
+  <input type="text" [(ngModel)]="user.lastName" name="lastName" placeholder="Last Name" required>
+  <input type="email" [(ngModel)]="user.email" name="email" placeholder="Email" required>
+  <input type="text" [(ngModel)]="user.username" name="username" placeholder="Username" required>
+  <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" required>
+  <input type="text" [(ngModel)]="user.role" name="role" placeholder="Role (USER, ADMIN)" required>
+  <div class="buttons">
+    <button (click)="cancel()">Cancelar</button>
+    <button (click)="register()">Register</button>
+  </div>
+
+</form>
+
+

@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<h2>Login</h2>
+<div class="logo-container">
+  <img src="../../assets/images/logoCaso2.jpg" alt="Logo de la aplicación de música" class="logo-image">
+</div>
+<form>
+  <input type="text" [(ngModel)]="credentials.username" name="username" placeholder="Username" required>
+  <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password" required>
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  <button (click)="login()">Login</button>
+</form>
+<div class="register-link">
+  <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
+</div>

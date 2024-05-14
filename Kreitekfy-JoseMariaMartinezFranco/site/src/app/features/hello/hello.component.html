@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las últimas novedades</title>
+</head>
+<body *ngIf="isAuthenticated">
+    <form>
+        <div class="links-container">
+            <div class = "filtro">
+                <label for="style">Estilo Musical</label>
+                <input type="text" [(ngModel)]="styleFilter" name="style">
+            </div>
+
+                <button class="col-12 col-md-12" (click)="limpiarCampos()">Limpiar campos</button>
+                <button id="btnSearch" class="col-6 col-md-3 btn btn-secondary" (click)="searchByFilters();">Buscar</button>
+        </div>
+    </form>
+    <h2>Las últimas novedades</h2>
+
+    <table *ngIf="newSongs.length > 0">
+      <tbody class="song-container">
+        <tr *ngFor="let song of newSongs">
+          <td>
+            <a [href]="'/songs/' + song.id"><img [src]="song.image" alt="Song Image" ></a>
+            <div class="song-details">
+              <h3>{{ song.name }}</h3>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>Las más escuchadas</h2>
+    
+    <table *ngIf="popularSongs.length > 0">
+      <tbody class="song-container">
+        <tr *ngFor="let song of popularSongs">
+          <td>
+            <a [href]="'/songs/' + song.id"><img [src]="song.image" alt="Song Image" ></a>
+            <div class="song-details">
+              <h3>{{ song.name }}</h3>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Para ti</h2>
+    
+    <table *ngIf="forYouSongs.length > 0">
+      <tbody class="song-container">
+        <tr *ngFor="let song of forYouSongs">
+          <td>
+            <a [href]="'/songs/' + song.id"><img [src]="song.image" alt="Song Image" ></a>
+            <div class="song-details">
+              <h3>{{ song.name }}</h3>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+<div class="botoneraPaginacion">
+    <button [disabled]="page === 0" class="btn btn-secondary btnAtras" (click)="navegarAnterior()">Anterior</button>
+    <span>Pagina {{(page+1)}} de {{totalPages}} - Elementos totales: {{totalElements}}</span>
+    <button [disabled]="last" class="btn btn-secondary btnSiguiente" (click)="navegarSiguiente()">Siguiente</button>
+</div>
+</body>
+</html>
